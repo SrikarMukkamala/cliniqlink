@@ -20,7 +20,7 @@ You can find the quantized model [here](https://huggingface.co/MaziyarPanahi/Bio
 # References:
 1. [ClinIQLink Sample Dataset](https://github.com/Brandonio-c/ClinIQLink_Sample-dataset)
 2. Labrak, Y., Bazoge, A., Morin, E., Gourraud, P.-A., Rouvier, M., & Dufour, R. (2024). BioMistral: A Collection of Open-Source Pretrained Large Language Models for Medical Domains. arXiv. Retrieved from https://arxiv.org/abs/2402.10373
-3. 3. Xiong, G., Jin, Q., Lu, Z., & Zhang, A. (2024). Benchmarking Retrieval-Augmented Generation for Medicine. *arXiv preprint arXiv:2402.13178*. Retrieved from [https://arxiv.org/abs/2402.13178](https://arxiv.org/abs/2402.13178)
+3. Xiong, G., Jin, Q., Lu, Z., & Zhang, A. (2024). Benchmarking Retrieval-Augmented Generation for Medicine. *arXiv preprint arXiv:2402.13178*. Retrieved from [https://arxiv.org/abs/2402.13178](https://arxiv.org/abs/2402.13178)
 4. [Quantized BioMistral Model](https://huggingface.co/MaziyarPanahi/BioMistral-7B-GGUF)
 
 
