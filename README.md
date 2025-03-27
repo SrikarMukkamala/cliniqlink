@@ -5,7 +5,7 @@
 4. python3 ClinIQLink_Sample-dataset/sample_submission/submit.py <br>
 
 # Update the RAG's Knowledge base:
-You can update the RAG KB by using the kb_builder.py file. <br>
+You can update the RAG KB by using the kb_builder.py file which creates faiss index. <br>
 The output will be a pickle (.pkl) file which you should paste in submission_template folder. <br>
 
 # Results:
