@@ -8,5 +8,5 @@
 The model is around 14.5 GB in size, so kindly ensure that <br>
 the system you are running on has atleast 16 GB RAM or you can also try <br>
 quantizing the model but that may result in a slightly reducing the performace. <br>
-You can find the quantized model <href="https://huggingface.co/MaziyarPanahi/BioMistral-7B-GGUF">here</href>.
+You can find the quantized model [here]("https://huggingface.co/MaziyarPanahi/BioMistral-7B-GGUF").
 
