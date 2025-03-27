@@ -6,7 +6,7 @@
 
 # Update the RAG's Knowledge base:
 You can update the RAG KB by using the kb_builder.py file. <br>
-The output will be a pickle(.pkl) file which you should paste in submission_template folder. <br>
+The output will be a pickle (.pkl) file which you should paste in submission_template folder. <br>
 
 # Results:
 You can find the results of that run in enhanced_medical_evaluation_results.json file. <br>
