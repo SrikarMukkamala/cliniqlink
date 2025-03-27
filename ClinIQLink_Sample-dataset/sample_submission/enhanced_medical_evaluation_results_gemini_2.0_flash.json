@@ -1,0 +1,440 @@
+{
+  "true_false": {
+    "average": 0.6,
+    "scores": {
+      "000-0000000000-p00-para31": {
+        "question": "There are lymphatic vessels present in the visceral pleura.",
+        "expected": "false",
+        "predicted": "false",
+        "score": 1.0,
+        "response": "False"
+      },
+      "000-0000000000-p00-para32": {
+        "question": "Renal cell carcinomas originate from the distal tubules of the nephron.",
+        "expected": "false",
+        "predicted": "false",
+        "score": 1.0,
+        "response": "False"
+      },
+      "000-0000000000-p00-para33": {
+        "question": "The transversalis fascia is continuous with the fascia on the inferior surface of the diaphragm.",
+        "expected": "true",
+        "predicted": "true",
+        "score": 1.0,
+        "response": "True"
+      },
+      "000-0000000000-p00-para34": {
+        "question": "Pericardial effusion typically presents with rapidly accumulating excess fluid causing cardiac tamponade due to compression of the heart.",
+        "expected": "true",
+        "predicted": "false",
+        "score": 0.0,
+        "response": "False"
+      },
+      "000-0000000000-p00-para35": {
+        "question": "Semispinalis capitis originates from the transverse processes of TI to TVI and inserts onto the medial area between the superior and inferior nuchal lines of the occipital bone.",
+        "expected": "true",
+        "predicted": "false",
+        "score": 0.0,
+        "response": "False"
+      }
+    }
+  },
+  "multiple_choice": {
+    "average": 1.0,
+    "scores": {
+      "000-0000000000-p00-para06": {
+        "question": "What artery primarily supplies blood to the spleen?",
+        "expected": "B",
+        "predicted": "B",
+        "score": 1.0,
+        "response": "B"
+      },
+      "000-0000000000-p00-para07": {
+        "question": "What happens when the signals from both the visceral and somatic sensory neurons converge at the same spinal cord level?",
+        "expected": "C",
+        "predicted": "C",
+        "score": 1.0,
+        "response": "C"
+      },
+      "000-0000000000-p00-para08": {
+        "question": "What levels of the spinal column give their names to the sets of splanchnic nerves that travel on each side of the vertebral column?",
+        "expected": "A",
+        "predicted": "A",
+        "score": 1.0,
+        "response": "A"
+      },
+      "000-0000000000-p00-para09": {
+        "question": "At what level of the spine do spinal nerves form the pudendal nerve?",
+        "expected": "C",
+        "predicted": "C",
+        "score": 1.0,
+        "response": "C"
+      },
+      "000-0000000000-p00-para10": {
+        "question": "What level of the spinal nerves supplies the dermatome that primarily maps the anterior regions of the perineum?",
+        "expected": "D",
+        "predicted": "D",
+        "score": 1.0,
+        "response": "D"
+      }
+    }
+  },
+  "list": {
+    "average": 0.6780952380952381,
+    "scores": {
+      "000-0000000000-p00-para01": {
+        "question": "What are all the names of superficial and deeper muscles located in the back?",
+        "expected": [
+          "Trapezius",
+          "Latissimus dorsi",
+          "Rhomboid minor",
+          "Rhomboid major",
+          "Levator scapulae"
+        ],
+        "predicted": [
+          "Trapezius",
+          "Latissimus dorsi",
+          "Rhomboid minor",
+          "Levator scapulae",
+          "Rhomboid major"
+        ],
+        "score": 1.0,
+        "response": "Trapezius, Latissimus dorsi, Rhomboid minor, Levator scapulae, Rhomboid major"
+      },
+      "000-0000000000-p00-para02": {
+        "question": "What structures does the right vagus nerve pass near or give branches to?",
+        "expected": [
+          "Right recurrent laryngeal nerve",
+          "Right subclavian artery",
+          "Trachea",
+          "Esophagus",
+          "Superior vena cava",
+          "Right main bronchus",
+          "Cardiac plexus",
+          "Pulmonary plexus",
+          "Esophageal plexus"
+        ],
+        "predicted": [
+          "Trachea",
+          "Esophagus",
+          "Cardiac plexus",
+          "Pulmonary plexus",
+          "Azygos vein",
+          "Brachiocephalic trunk"
+        ],
+        "score": 0.5333333333333333,
+        "response": "Trachea, Esophagus, Cardiac plexus, Pulmonary plexus, Azygos vein, Brachiocephalic trunk"
+      },
+      "000-0000000000-p00-para03": {
+        "question": "What are all the arteries involved in providing blood supply to the duodenum?",
+        "expected": [
+          "Celiac trunk branches",
+          "Superior mesenteric artery branches"
+        ],
+        "predicted": [
+          "Celiac trunk branches",
+          "Superior mesenteric artery branches"
+        ],
+        "score": 1.0,
+        "response": "Celiac trunk branches, Superior mesenteric artery branches"
+      },
+      "000-0000000000-p00-para04": {
+        "question": "What are the subsidiary plexuses of the inferior hypogastric plexus? ",
+        "expected": [
+          "Rectal plexus",
+          "Uterovaginal plexus",
+          "Prostatic plexus",
+          "Vesical plexus"
+        ],
+        "predicted": [
+          "Rectal plexus",
+          "Uterovaginal plexus",
+          "Vesical plexus"
+        ],
+        "score": 0.8571428571428571,
+        "response": "Rectal plexus, Uterovaginal plexus, Vesical plexus"
+      },
+      "000-0000000000-p00-para05": {
+        "question": "What are all the structures passing through the greater sciatic foramen?",
+        "expected": [
+          "Superior gluteal nerve and vessel",
+          "Inferior gluteal nerves and vessels",
+          "Sciatic nerve",
+          "Posterior femoral cutaneous nerves",
+          "Pudendal nerve",
+          "Internal pudendal artery and vein",
+          "Nerve to quadratus femoris",
+          "Nerves to obturator internus muscle"
+        ],
+        "predicted": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "score": 0.0,
+        "response": "A, B, C, D, E, F, G, H"
+      }
+    }
+  },
+  "short": {
+    "average": 0.5381837026358904,
+    "scores": {
+      "000-0000000000-p00-para26": {
+        "question": "What characterizes the twelve thoracic vertebrae?",
+        "expected": "Their articulation with ribs.",
+        "predicted": "Final Answer: The twelve thoracic vertebrae are characterized by their articulation with ribs. A typical thoracic vertebra has two partial facets (superior and inferior costal facets) on each side of the vertebral body for articulation with the head of its own rib and the head of the rib below. The superior costal facet is larger than the inferior costal facet.",
+        "f1_score": 0.4085955059833519,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para27": {
+        "question": "What do the two demifacets on a typical thoracic vertebra's body articulate with?",
+        "expected": "Heads of adjacent ribs; specifically, one with the head of its own rib via the superior costal facet, and another with the head of the rib below via the inferior costal facet.",
+        "predicted": "Final Answer: The two demifacets (superior and inferior costal facets) on a typical thoracic vertebra's body articulate with the head of its own rib and the head of the rib below. Specifically, the superior costal facet articulates with part of its own rib's head, while the inferior costal facet articulates with part of the rib head located inferiorly.",
+        "f1_score": 0.8172340753421437,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para28": {
+        "question": "What structures form the margin of the pelvic outlet?",
+        "expected": "Pubic symphysis, ischial tuberosities, and the sacrococcygeal region connected via the sacrotuberous ligament.",
+        "predicted": "Final Answer: The margin of the pelvic outlet is formed by the pubic symphysis (anteriorly), the ischiopubic rami and ischial tuberosities (anterolaterally), the sacrotuberous ligaments (posterolaterally), and the tip of the coccyx (posteriorly).",
+        "f1_score": 0.626840950057703,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para29": {
+        "question": "What nerves arise from lumbar segments?",
+        "expected": "Subcostal nerve (T12), Iliohypogastric nerve (L1), Femoral nerve (L2-L4).",
+        "predicted": "Final Answer: Nerves arising from lumbar segments (L1-L5) contribute to the lumbar plexus. This plexus gives rise to nerves that innervate the lower limb, including the femoral nerve and the obturator nerve. Additionally, lumbar segments contribute to the lumbosacral plexus, which also involves sacral segments and innervates the lower limb. The fifth lumbar nerve and first sacral root also receive sensory fibers from the lumbosacral and sacroiliac joints.",
+        "f1_score": 0.28986420549075587,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para30": {
+        "question": "What characterizes osteoporosis?",
+        "expected": "Normal bone quality with deficient bone quantity.",
+        "predicted": "Final Answer: Osteoporosis is characterized by decreased bone strength, leading to an increased risk of fractures. This reduction in bone strength stems from a deficiency in the quantity of bone, often accompanied by deterioration in skeletal microarchitecture. While bone quality is typically normal, the reduced bone mass makes individuals, especially postmenopausal women and older men, susceptible to fractures, most commonly in the vertebrae, hip, and distal radius. Genetic factors, activity levels, nutrition, and estrogen levels also influence its development.",
+        "f1_score": 0.548383776305498,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      }
+    }
+  },
+  "multi_hop": {
+    "average": 0.5867034999679953,
+    "scores": {
+      "000-0000000000-p00-para16": {
+        "question": "What nerves provide innervation to the lumbrical muscles responsible for movements related to both the index finger and the middle finger?",
+        "expected": "Median nerve",
+        "predicted": "Reasoning:\nThe lumbrical muscles are responsible for movements related to the index and middle fingers. The provided text states that \"All of these muscles are innervated by the median nerve (or its branches) except the FDP to the ring and small fingers, which are innervated by the ulnar nerve.\" Since the lumbricals of the index and middle fingers are not specified as exceptions, they are innervated by the median nerve.\n\nFinal Answer: The median nerve.",
+        "f1_score": 0.5174893348550826,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para17": {
+        "question": "What anatomical feature allows the posterior and anterior rami of spinal nerves S1 to S4 to exit the sacrum separately?",
+        "expected": "The fusion of transverse processes of adjacent sacral vertebrae lateral to both the positions of the intervertebral foramina and the point where spinal nerves divide into their posterior and anterior branches.",
+        "predicted": "Final Answer: The fusion of transverse processes of adjacent sacral vertebrae lateral to the bifurcation of spinal nerves into posterior and anterior rami creates separate anterior and posterior sacral foramina, allowing the rami to exit separately.\n\nReasoning:\n1. The question asks about the anatomical feature that allows separate exit of anterior and posterior rami of spinal nerves S1-S4 from the sacrum.\n2. The first provided text states that the transverse processes of adjacent sacral vertebrae fuse lateral to the bifurcation of spinal nerves into posterior and anterior rami.\n3. This fusion creates separate anterior and posterior sacral foramina.\n4. The anterior rami exit through the anterior sacral foramina, and the posterior rami exit through the posterior sacral foramina.",
+        "f1_score": 0.8196639551326801,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para18": {
+        "question": "What can pass through both the foramina transversaria along the sides of the cervical spine and within structures associated closely with the atlas (Cl) vertebra?",
+        "expected": "Blood vessels, specifically the vertebral arteries and veins.",
+        "predicted": "Final Answer: Vertebral arteries\n\nReasoning: The foramina transversaria are unique to the cervical vertebrae and provide a bony canal for the vertebral arteries to ascend to the brain. The atlas (C1) vertebra is the first cervical vertebra and is closely associated with the vertebral arteries as they pass through its foramen transversarium and curve medially around the lateral mass of the atlas to enter the vertebral canal.",
+        "f1_score": 0.38703699231674915,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para19": {
+        "question": "What can be concluded about how the rotation of the head relates to the contraction of individual spinotransversales muscles?",
+        "expected": "When an individual spinotransversales muscle contracts, it rotates the head towards the contracting muscle's side.",
+        "predicted": "Reasoning:\nThe provided text states that the spinotransversales muscles, specifically the splenius capitis and splenius cervicis, when acting individually, rotate the head to the same side as the contracting muscle.\n\nFinal Answer: Contraction of a spinotransversales muscle rotates the head to the same side as the muscle that is contracting.",
+        "f1_score": 0.9039810390020435,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para20": {
+        "question": "What can be identified at the junction where the sagittal and lambdoid sutures meet when observing the skull's anatomy?",
+        "expected": "Lambda",
+        "predicted": "Reasoning:\nThe question asks what can be identified at the junction where the sagittal and lambdoid sutures meet. According to the provided text, \"the junction of the sagittal and lambdoid sutures is the lambda\".\n\nFinal Answer: Lambda",
+        "f1_score": 0.3053461785334213,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      }
+    }
+  },
+  "short_inverse": {
+    "average": 0.707953113756545,
+    "scores": {
+      "000-0000000000-p00-para21": {
+        "question": "What types and numbers of vertebrae make up the human spine?",
+        "expected": "The given answer contains several inaccuracies compared to the actual composition described in the paragraph. Specifically, there are actually 7 cervical, 12 thoracic, 5 lumbar, and the rest correctly identified. Therefore, the correct answer should reflect these accurate counts.",
+        "predicted": "Incorrect Explanation: The provided answer is incorrect because it misstates the number of vertebrae in each region. The correct numbers are: 7 cervical, 12 thoracic, 5 lumbar, 5 sacral, and 3-4 coccygeal.",
+        "f1_score": 0.6434407420140389,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para22": {
+        "question": "What is the primary area covered by the dermatome associated with the second thoracic spinal nerve?",
+        "expected": "The statement incorrectly places the primary coverage of the T2 dermatome on the posterior back instead of mentioning its extension into the upper limb and presence on the anterior chest wall, indicating confusion between anatomical locations described in the passage.",
+        "predicted": "Incorrect Explanation: While T2 does innervate the posterior back, the provided answer implies it's the *highest* thoracic dermatome on the posterior back. Dermatomes progress sequentially down the spine, so T2 would be relatively high, but other thoracic dermatomes (T3, T4, etc.) would also cover areas of the posterior back lower down. The primary area covered by T2 is the upper chest and back, near the axilla.",
+        "f1_score": 0.6575986219160461,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para23": {
+        "question": "What distinguishes lumbar vertebrae from cervical and thoracic vertebrae?",
+        "expected": "Lumbar vertebrae are described as 'much larger than any other vertebrae in any other region.' Therefore, the statement claiming they are smaller is a contradiction of the given facts. The correct distinction lies in their significant size relative to vertebrae found elsewhere along the vertebral column",
+        "predicted": "Incorrect Explanation: Lumbar vertebrae are actually larger than both cervical and thoracic vertebrae, as they bear more weight. The provided answer has it backwards.",
+        "f1_score": 0.6455662815706273,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para24": {
+        "question": "What structures pass through both the deep and superficial inguinal rings?",
+        "expected": "While the statement seems accurate at first glance because it involves key components associated with male anatomy near the groin area, specifically mentioning passage through significant anatomical points, the actual contents passing through the deep and superficial inguinal rings involve more comprehensive elements. Specifically, the spermatic cord contains various structures, including arteries, nerves, and lymphatics, which indeed traverse these regions. Thus, stating merely that \"the testicular artery passes through these two anatomical landmarks\" simplifies what actually goes through them; rather, the entire spermatic cord does, encompassing multiple components including but not limited to the testicular artery. Therefore, the most straightforward correction would acknowledge this broader composition correctly moving past these areas, emphasizing the involvement of the whole spermatic cord instead of isolating one component within it.",
+        "predicted": "Incorrect Explanation: The testicular artery passes through the deep inguinal ring but exits the inguinal canal via the deep ring as well; it does not pass through the superficial inguinal ring. The spermatic cord, which contains the testicular artery, passes through both rings.",
+        "f1_score": 0.7181170785770481,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para25": {
+        "question": "What structures does the urethra penetrate vertically through when passing from the pelvic cavity to the perineum?",
+        "expected": "The urethra actually penetrates through a circular hiatus in the perineal membrane, not the levator ani muscle, as it moves from the pelvic cavity to the perineum. Therefore, the correct answer should involve the perineal membrane, specifically mentioning the circular hiatus within it.",
+        "predicted": "Incorrect Explanation: The urethra penetrates the perineal membrane, not the levator ani muscle, as it passes from the pelvic cavity to the perineum. While the levator ani muscle contributes to the pelvic floor, the urethra specifically passes through an opening (hiatus) in the perineal membrane.",
+        "f1_score": 0.8750428447049645,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      }
+    }
+  },
+  "multi_hop_inverse": {
+    "average": 0.6258792829147106,
+    "scores": {
+      "000-0000000000-p00-para11": {
+        "question": "What pathway does blood take when flowing out of the skull via the emissary veins?",
+        "expected": [
+          "- Step 1 contains the incorrect inference.",
+          "- Explanation: Step 1 inaccurately implies that because the dural venous sinuses eventually connect to the jugular veins, emissary veins must empty directly there, bypassing the sinuses. Emissary veins do communicate externally but first drain into the dural venous sinuses. Only after blood reaches these sinuses does it travel to the internal jugular veins. By asserting a direct route, Step 1 overlooks the essential intermediary role of the sinuses in the venous return pathway described in the text."
+        ],
+        "predicted": "Incorrect Reasoning Step: Step 1\nIncorrect Reasoning Explanation: Step 1 makes an assumption that blood traveling through emissary veins empties directly into the internal jugular veins, bypassing other routes. This is incorrect because the text implies the emissary veins connect intracranial with extracranial veins, not directly to the internal jugular.",
+        "f1_score": 0.6730205193013579,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para12": {
+        "question": "What motor functions of the hand depend primarily on the intrinsic muscles innervated by both branches of the median and ulnar nerves?",
+        "expected": [
+          "- Step 2 contains the incorrect inference",
+          "- Explanation: Step 2 incorrectly generalizes about the influence of multiple sets of nerves on extension and adduction actions without specifying how each action (extension vs. adduction) is specifically governed by distinct nerves or combinations thereof. Specifically, the statement overlooks that extending the interphalangeal joints during flexion at the metacarpophalangeal joints (\"ta-ta\" gesture) is attributed to the intrinsic muscles largely under the control of the ulnar nerve, whereas the involvement of the median nerve in grasping objects between the thumb and another digit does not necessarily imply a primary role in these specific extension/adduction actions described. Correct interpretation should acknowledge that extending the interphalangeal joints while flexing the metacarpophalangeal joints indeed relies heavily on the intrinsic muscles, particularly those innervated by the ulnar nerve. However, the roles of the median and ulnar nerves need clarification regarding their contributions to specific types of grips and manipulations beyond the simplistic assertion made here. For instance, the ability to oppose the thumb and digits, vital for many forms of gripping, significantly involves the median nerve. Thus, a nuanced understanding recognizes the complementary yet distinct functions supported by each nerve in facilitating a range of manual dexterity tasks."
+        ],
+        "predicted": "Incorrect Reasoning Step: Step 2\nIncorrect Reasoning Explanation: This step makes a vague statement about coordination among muscle groups and influence of more than one set of nerves, but it does not directly address the question of which specific motor functions depend *primarily* on the intrinsic muscles innervated by *both* the median and ulnar nerves. The question requires identifying functions that are critically dependent on the combined innervation of these two nerves, not just general coordination.",
+        "f1_score": 0.5167560998048872,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para13": {
+        "question": "How do sympathetic nervous system signals destined for the face originate in terms of their path from the central nervous system?",
+        "expected": [
+          "- Step 3 contains the incorrect inference.",
+          "- Explanation: This step incorrectly infers that because there's a need for widespread coverage and because some signals go upwards, the primary origin for sympathetic signals to the face would necessarily be from areas slightly below the acknowledged range of T1-T5, suggesting L2 as a potential starting point. However, all sympathetics passing into the head actually have preganglionic fibers that emerge from spinal cord level T1, not from lower levels like L2. This misunderstanding leads to the incorrect conclusion about the origin of sympathetic signals destined for the face."
+        ],
+        "predicted": "Incorrect Reasoning Step: Step 3\nIncorrect Reasoning Explanation: This step makes an unsupported leap in logic. While it correctly states that sympathetic fibers travel through the sympathetic trunk to reach the head, it incorrectly concludes that the signals must originate *below* the T1-T5 range. The text explicitly states that the sympathetic preganglionic neurons controlling sympathetic functions in the head and neck are distributed at levels C8 to T5. There is no reason to assume that these signals originate below T1.",
+        "f1_score": 0.7696282047001684,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para14": {
+        "question": "What does the attachment of levator ani contribute towards during sexual arousal?",
+        "expected": [
+          "- Step 4 contains the incorrect inference.",
+          "- Explanation: In Step 4, the assumption that the levator ani's participation in processes affected by the inferior hypogastric plexus implies a potential effect on bladder function during sexual arousal introduces an unjustified leap. While the levator ani indeed participates in the support and positioning of pelvic viscera and influences the stability of the pelvic floor, the provided paragraph specifically discusses its mention alongside other elements without establishing a causal connection to bladder inhibition or sexual arousal-related changes in bladder function. Therefore, inferring its contribution to inhibiting bladder function represents an unwarranted extension beyond the given data."
+        ],
+        "predicted": "Incorrect Reasoning Step: Step 1\nIncorrect Reasoning Explanation: While pelvic splanchnic nerves are involved in sexual function, this information is irrelevant to the role of the levator ani during sexual arousal. The reasoning incorrectly pivots to nerve control of erection, which does not address the muscle's function.",
+        "f1_score": 0.46775908857763193,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      },
+      "000-0000000000-p00-para15": {
+        "question": "What happens when damage occurs specifically to the ulnar nerve after it leaves Guyon's canal?",
+        "expected": [
+          "- Step 5 contains the incorrect inference.",
+          "- Explanation: The explanation in Step 5 incorrectly suggests that damage to the ulnar nerve immediately after exiting Guyon's canal would result in widespread impairment of both palmar and dorsal surfaces' sensation of the entire hand. In reality, the ulnar nerve's involvement does indeed cover aspects of the hand, but the extent and specifics of its influence vary depending on whether we're discussing motor or sensory impacts and precisely where along its course damage occurs. Specifically, the deep branch deals with motor functions mainly within the hand, whereas the superficial branch handles sensory duties related to certain fingers. Moreover, the presence of other nerves, like the median nerve contributing to some thumb movements and sensations elsewhere, indicates a division of labor among nerves rather than a singular, overarching effect from ulnar nerve damage alone."
+        ],
+        "predicted": "Incorrect Reasoning Step: Step 5\nIncorrect Reasoning Explanation: Damage to the ulnar nerve after Guyon's canal primarily affects the intrinsic hand muscles (interossei, adductor pollicis, and the two medial lumbricals) and sensation to the palmar side of the fourth and fifth digits. It does NOT affect the entire hand or the dorsal surface. The dorsal cutaneous branch of the ulnar nerve branches off in the forearm, proximal to Guyon's canal, so damage distal to the canal will not affect dorsal sensation.",
+        "f1_score": 0.7022325021895075,
+        "metrics": {
+          "bleu": 0.0,
+          "meteor": 0.0,
+          "rouge": 0.0
+        }
+      }
+    }
+  },
+  "overall_score": 0.6766878339100543
+}
