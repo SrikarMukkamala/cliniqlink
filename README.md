@@ -5,6 +5,7 @@
 4. python3 ClinIQLink_Sample-dataset/sample_submission/submit.py <br>
 
 # Update the RAG's Knowledge base:
+The current Knowledge base is solely built on [textbooks data](https://huggingface.co/datasets/MedRAG/textbooks).
 You can update the RAG KB by using the kb_builder.py file which creates faiss index. <br>
 The output will be a pickle (.pkl) file which you should paste in submission_template folder. <br>
 
@@ -25,6 +26,9 @@ You can find the output of that run in enhanced_medical_evaluation_results.json 
 | **Multi-hop Inverse** | 0.000              | 0.626                  | -0.626     |
 | **Overall Score**     | 0.577              | 0.677                  | -0.100     |
 
+# Future Works:
+1. Adjust BioMistral7B to work for Multi-hop Inverse Questions.
+2. Update RAG's Knowledge base with [PubMed data](https://huggingface.co/datasets/MedRAG/pubmed) and [Wikipedia data](https://huggingface.co/datasets/MedRAG/wikipedia).
 
 # Note: 
 The model is around 14.5 GB in size, so kindly ensure that <br>
