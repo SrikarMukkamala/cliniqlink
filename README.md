@@ -4,7 +4,7 @@
 3. pip install -r ClinIQLink_Sample-dataset/sample_submission/requirements.txt <br>
 4. python3 ClinIQLink_Sample-dataset/sample_submission/submit.py <br>
 
-P.S.: Running for the first might take some time to download the model. <br>
+PS: Running for the first might take some time to download the model. <br>
 
 # Update the RAG's Knowledge base:
 The current Knowledge base is solely built on [textbooks data](https://huggingface.co/datasets/MedRAG/textbooks). <br>
