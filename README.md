@@ -17,7 +17,7 @@ You can find the output of that run in enhanced_medical_evaluation_results.json 
 # Results:
 # Model Performance Comparison
 
-| Category               | BioMistral7B F-1 Score | Gemini 2.0 Flash F-1 Score | Difference |
+| Category               | BioMistral7B F1 Score | Gemini 2.0 Flash F1 Score | Difference |
 |------------------------|--------------------|------------------------|------------|
 | **True/False**         | 0.800              | 0.600                  | +0.200     |
 | **Multiple Choice**    | 0.800              | 1.000                  | -0.200     |
