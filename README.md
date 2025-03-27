@@ -1,5 +1,6 @@
 # Steps to follow:
 1) git clone https://github.com/SrikarMukkamala/cliniqlink.git
-2) pip install -r ClinIQLink_Sample-dataset/sample_submission/requirements.txt
-3) python3 ClinIQLink_Sample-dataset/sample_submission/submit.py
+2) cd cliniqlink
+3) pip install -r ClinIQLink_Sample-dataset/sample_submission/requirements.txt
+4) python3 ClinIQLink_Sample-dataset/sample_submission/submit.py
 
