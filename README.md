@@ -32,6 +32,7 @@ You can find the output of that run in enhanced_medical_evaluation_results.json 
 3. Use BM25 + Faiss for re-ranking during information retrieval.
 4. Add Hallucination Detection Framework.
 5. Include External Fact Checking.
+6. Experiment with other models.
 
 # Note: 
 The model is around 14.5 GB in size, so kindly ensure that <br>
