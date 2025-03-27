@@ -4,6 +4,13 @@
 3) pip install -r ClinIQLink_Sample-dataset/sample_submission/requirements.txt <br>
 4) python3 ClinIQLink_Sample-dataset/sample_submission/submit.py <br>
 
+# Update the RAG's Knowledge base:
+You can update the RAG KB by using the kb_builder.py file. <br>
+The output will be a pickle(.pkl) file which you should paste in submission_template folder. <br>
+
+# Results:
+You can find the results of that run in enhanced_medical_evaluation_results.json file. <br>
+
 # Note: 
 The model is around 14.5 GB in size, so kindly ensure that <br>
 the system you are running on has atleast 16 GB RAM or you can also try <br>
