@@ -2,7 +2,7 @@
 numpy<2
 scikit-learn
 sentence-transformers
-nltk
+nltk==3.9.1
 rouge-score
 transformers # only required if using GPT-2 example
 torch
