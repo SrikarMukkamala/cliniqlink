@@ -8,3 +8,4 @@ transformers # only required if using GPT-2 example
 torch
 faiss-cpu
 datasets
+gdown
