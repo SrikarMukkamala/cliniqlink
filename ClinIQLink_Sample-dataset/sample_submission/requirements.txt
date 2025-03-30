@@ -1,11 +1,11 @@
 #Using python 3.10! 
-numpy<2
-scikit-learn
-sentence-transformers
+numpy==1.26.4
+scikit-learn==1.2.2
+sentence-transformers==3.3.1
 nltk==3.9.1
-rouge-score
-transformers # only required if using GPT-2 example
-torch
-faiss-cpu
-datasets
-gdown
+rouge-score==0.1.2
+transformers==4.47.0 # only required if using GPT-2 example
+torch==2.5.1+cu121
+faiss-cpu==1.10.0
+datasets==3.3.1
+gdown==5.2.0
