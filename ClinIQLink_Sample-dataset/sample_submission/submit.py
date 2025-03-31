@@ -23,7 +23,7 @@ nltk.download('wordnet')
 
 class MedicalRAG:
     """Enhanced Medical RAG system with better context handling"""
-    def __init__(self, knowledge_base_path: str = "ClinIQLink_Sample-dataset/sample_submission/rag_biomistral.pkl"):
+    def __init__(self, knowledge_base_path: str = "ClinIQLink_Sample-dataset/sample_submission/rag_model.pkl"):
         self.encoder = SentenceTransformer('all-MiniLM-L6-v2')
         self.knowledge = []
         self.index = None
@@ -62,7 +62,7 @@ class MedicalRAG:
         _, indices = self.index.search(query_embed, k)
         return [self.knowledge[i] for i in indices[0]]
 
-class BioMistralEvaluator:
+class ModelEvaluator:
     def __init__(self):
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.qa_dir = os.path.join(self.base_dir, "..", "sample_QA_pairs")
@@ -71,12 +71,12 @@ class BioMistralEvaluator:
         # Initialize components
         self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
         self.rag = MedicalRAG()
-        self.model, self.tokenizer = self._load_biomistral()
+        self.model, self.tokenizer = self._load_model()
         self.pipeline = self._create_pipeline()
         
-    def _load_biomistral(self):
+    def _load_model(self):
         """Optimized model loading with error handling"""
-        print("Loading BioMistral-7B with optimized settings...")
+        print("Loading Model with optimized settings...")
         try:
             tokenizer = AutoTokenizer.from_pretrained(
                 "BioMistral/BioMistral-7B",
@@ -924,6 +924,6 @@ class BioMistralEvaluator:
             raise
 
 if __name__ == "__main__":
-    print("Initializing Enhanced BioMistral Medical Evaluator...")
-    evaluator = BioMistralEvaluator()
+    print("Initializing Enhanced Model Medical Evaluator...")
+    evaluator = ModelEvaluator()
     results = evaluator.run_all_evaluations()
