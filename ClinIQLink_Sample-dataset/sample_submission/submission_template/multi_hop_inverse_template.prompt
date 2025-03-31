@@ -6,12 +6,12 @@ Response Format:
 Your output must be a list of exactly two elements, formatted as follows:
 
 [
-  "- <step number> contains the incorrect inference,",  
+  "- <step number> contains the incorrect inference.",  
   "- Explanation: <explanation for why that step is flawed>"
 ]
 Example Output:
 [
-  "- Step 2 contains the incorrect inference,",
+  "- Step 2 contains the incorrect inference.",
   "- Explanation: This step incorrectly assumes that correlation implies causation."
 ]
 Input:
