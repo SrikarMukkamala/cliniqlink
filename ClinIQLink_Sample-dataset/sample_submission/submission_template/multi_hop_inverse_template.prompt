@@ -1,5 +1,20 @@
-You are a highly knowledgeable medical expert. Below is a multi-step question along with its final answer, however, the provided answer is incorrect, and the full reasoning that led to the incorrect conclusion. Your task is to identify and list the specific reasoning step that is flawed by outputting its identifier (e.g., "Step x"), reasoning as to why that step is flawed(e.g., "Explanantion:"). Make sure that response matches expected output format given below. Output should be a list of length 2 with the following format
+You are a highly knowledgeable medical expert. Below is a multi-step question along with its final answer. However, the provided answer is incorrect due to a flaw in the reasoning process. Your task is to:
 
+Identify the specific reasoning step that contains the incorrect inference. Explain why that step is flawed.
+
+Response Format:
+Your output must be a list of exactly two elements, formatted as follows:
+
+[
+  "- <step number> contains the incorrect inference,",  
+  "- Explanation: <explanation for why that step is flawed>"
+]
+Example Output:
+[
+  "- Step 2 contains the incorrect inference,",
+  "- Explanation: This step incorrectly assumes that correlation implies causation."
+]
+Input:
 Question:
 {question}
 
@@ -9,6 +24,4 @@ Final Answer:
 Full Reasoning:
 {reasoning}
 
-Expected response output format is a list of length 2 with following step number and explanation separated by a comma:
-- <step number> contains the incorrect inference,
-- Explanation: <explanation for why that step is flawed>
+Ensure your response strictly adheres to this format.
