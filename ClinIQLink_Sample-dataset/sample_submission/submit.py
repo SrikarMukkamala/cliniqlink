@@ -369,10 +369,10 @@ class BioMistralEvaluator:
           
           # Calculate BLEU with smoothing
           smoothing = SmoothingFunction().method1
-          bleu = sentence_bleu([expected_tokens], pred_tokens, smoothing_function=smoothing)
+          bleu = sentence_bleu(expected_tokens, pred_tokens, smoothing_function=smoothing)
           
           # Calculate METEOR
-          meteor = meteor_score([expected_str], prediction_str)
+          meteor = meteor_score([expected_tokens], pred_tokens)
           
           # Calculate ROUGE
           scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
