@@ -793,66 +793,6 @@ class BioMistralEvaluator:
             return {"average": 0.0, "scores": {}}
 
 
-    def evaluate_multi_hop_inverse_questions(self):
-        """
-        Evaluate all Multi-hop Inverse questions by comparing the LLM's response with the provided
-        incorrect reasoning step. Returns a dictionary containing the average F1 score and a mapping
-        (by paragraph_id) of individual QA scores.
-        """
-        try:
-            mh_inverse_path = os.path.join(self.qa_dir, "multi_hop_inverse.json")
-            mh_inverse_data = self.load_json(mh_inverse_path)
-            if mh_inverse_data is None:
-                print("No Multi-hop Inverse data loaded.", flush=True)
-                return {"average": 0.0, "scores": {}}
-            template = self.load_template("multi_hop_inverse_template.prompt")
-            results = {}
-            scores = []
-            for qa in mh_inverse_data:
-                try:
-                    prompt = self.generate_prompt(template, qa, "multi_hop_inverse")
-                    response = [self.generate_response(prompt)]
-                    
-                    # SIMPLE CLEANING - JUST REMOVE UNWANTED CHARACTERS
-                    cleaned_response = [
-                        resp.replace('[\n    \"', '')  # Remove opening bracket and quotes
-                            .replace('\"\n]', '')      # Remove closing quotes and bracket
-                            .replace('\\",\n    \\"', '\n')  # Fix the inner newline formatting
-                            .strip()                   # Remove any extra whitespace
-                        for resp in response
-                    ]
-
-                    predicted_cleaned = []
-                    cleaned_temp1 = cleaned_response[0].split(",")[0]
-                    cleaned_temp1 = cleaned_temp1.replace("\"","")
-                    predicted_cleaned.append(cleaned_temp1)
-                    cleaned_temp2 = cleaned_response[0].split(",")[1]
-                    cleaned_temp2 = cleaned_temp2.replace("\n    \"","")
-                    predicted_cleaned.append(cleaned_temp2)
-
-
-                    # Use the provided incorrect reasoning step as the expected text.
-                    expected = qa.get("incorrect_reasoning_step", "")
-                    f1_score = self.evaluate_open_ended(expected, cleaned_response)
-                    metrics = self.evaluate_open_ended_metrics(expected, cleaned_response)
-                    para_id = qa.get("source", {}).get("paragraph_id", "unknown")
-                    results[para_id] = {
-                        "question": qa.get("question", ""),
-                        "expected": expected,
-                        "predicted": predicted_cleaned,
-                        "f1_score": f1_score,
-                        "metrics": metrics
-                    }
-                    scores.append(f1_score)
-                except Exception as inner_e:
-                    print(f"Error processing Multi-hop Inverse QA: {inner_e}", flush=True)
-            avg = sum(scores) / len(scores) if scores else 0.0
-            print(f"Average Multi-hop Inverse F1 Score: {avg:.2f}", flush=True)
-            return {"average": avg, "scores": results}
-        except Exception as e:
-            print(f"Error evaluating Multi-hop Inverse questions: {e}", flush=True)
-            return {"average": 0.0, "scores": {}}
-
     # def evaluate_multi_hop_inverse_questions(self):
     #     """
     #     Evaluate all Multi-hop Inverse questions by comparing the LLM's response with the provided
@@ -872,16 +812,34 @@ class BioMistralEvaluator:
     #             try:
     #                 prompt = self.generate_prompt(template, qa, "multi_hop_inverse")
     #                 response = [self.generate_response(prompt)]
-    #                 print("Multi-hop Inverse Response:", response, flush=True)
+                    
+    #                 # SIMPLE CLEANING - JUST REMOVE UNWANTED CHARACTERS
+    #                 cleaned_response = [
+    #                     resp.replace('[\n    \"', '')  # Remove opening bracket and quotes
+    #                         .replace('\"\n]', '')      # Remove closing quotes and bracket
+    #                         .replace('\\",\n    \\"', '\n')  # Fix the inner newline formatting
+    #                         .strip()                   # Remove any extra whitespace
+    #                     for resp in response
+    #                 ]
+
+    #                 predicted_cleaned = []
+    #                 cleaned_temp1 = cleaned_response[0].split(",")[0]
+    #                 cleaned_temp1 = cleaned_temp1.replace("\"","")
+    #                 predicted_cleaned.append(cleaned_temp1)
+    #                 cleaned_temp2 = cleaned_response[0].split(",")[1]
+    #                 cleaned_temp2 = cleaned_temp2.replace("\n    \"","")
+    #                 predicted_cleaned.append(cleaned_temp2)
+
+
     #                 # Use the provided incorrect reasoning step as the expected text.
     #                 expected = qa.get("incorrect_reasoning_step", "")
-    #                 f1_score = self.evaluate_open_ended(expected, response)
-    #                 metrics = self.evaluate_open_ended_metrics(expected, response)
+    #                 f1_score = self.evaluate_open_ended(expected, cleaned_response)
+    #                 metrics = self.evaluate_open_ended_metrics(expected, cleaned_response)
     #                 para_id = qa.get("source", {}).get("paragraph_id", "unknown")
     #                 results[para_id] = {
     #                     "question": qa.get("question", ""),
     #                     "expected": expected,
-    #                     "predicted": response,
+    #                     "predicted": predicted_cleaned,
     #                     "f1_score": f1_score,
     #                     "metrics": metrics
     #                 }
@@ -894,6 +852,48 @@ class BioMistralEvaluator:
     #     except Exception as e:
     #         print(f"Error evaluating Multi-hop Inverse questions: {e}", flush=True)
     #         return {"average": 0.0, "scores": {}}
+
+    def evaluate_multi_hop_inverse_questions(self):
+        """
+        Evaluate all Multi-hop Inverse questions by comparing the LLM's response with the provided
+        incorrect reasoning step. Returns a dictionary containing the average F1 score and a mapping
+        (by paragraph_id) of individual QA scores.
+        """
+        try:
+            mh_inverse_path = os.path.join(self.qa_dir, "multi_hop_inverse.json")
+            mh_inverse_data = self.load_json(mh_inverse_path)
+            if mh_inverse_data is None:
+                print("No Multi-hop Inverse data loaded.", flush=True)
+                return {"average": 0.0, "scores": {}}
+            template = self.load_template("multi_hop_inverse_template.prompt")
+            results = {}
+            scores = []
+            for qa in mh_inverse_data:
+                try:
+                    prompt = self.generate_prompt(template, qa, "multi_hop_inverse")
+                    response = [self.generate_response(prompt)]
+                    print("Multi-hop Inverse Response:", response, flush=True)
+                    # Use the provided incorrect reasoning step as the expected text.
+                    expected = qa.get("incorrect_reasoning_step", "")
+                    f1_score = self.evaluate_open_ended(expected, response)
+                    metrics = self.evaluate_open_ended_metrics(expected, response)
+                    para_id = qa.get("source", {}).get("paragraph_id", "unknown")
+                    results[para_id] = {
+                        "question": qa.get("question", ""),
+                        "expected": expected,
+                        "predicted": response,
+                        "f1_score": f1_score,
+                        "metrics": metrics
+                    }
+                    scores.append(f1_score)
+                except Exception as inner_e:
+                    print(f"Error processing Multi-hop Inverse QA: {inner_e}", flush=True)
+            avg = sum(scores) / len(scores) if scores else 0.0
+            print(f"Average Multi-hop Inverse F1 Score: {avg:.2f}", flush=True)
+            return {"average": avg, "scores": results}
+        except Exception as e:
+            print(f"Error evaluating Multi-hop Inverse questions: {e}", flush=True)
+            return {"average": 0.0, "scores": {}}
 
 
 
