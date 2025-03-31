@@ -372,7 +372,7 @@ class BioMistralEvaluator:
           bleu = sentence_bleu(expected_tokens, pred_tokens, smoothing_function=smoothing)
           
           # Calculate METEOR
-          meteor = meteor_score([expected_tokens], pred_tokens)
+          meteor = meteor_score(references=[expected_tokens], hypothesis=pred_tokens)
           
           # Calculate ROUGE
           scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
@@ -453,69 +453,9 @@ class BioMistralEvaluator:
           print(f"Generation error: {e}")
           return "[Error generating response]"
 
-    # Enhanced evaluation methods
-  
-    def evaluate_open_ended_metrics(self, expected, prediction):
-        try:
-            # Convert to strings if they're lists
-            expected_str = ' '.join(expected) if isinstance(expected, list) else str(expected)
-            prediction_str = ' '.join(prediction) if isinstance(prediction, list) else str(prediction)
-            
-            # Tokenize for BLEU
-            expected_tokens = [word_tokenize(expected_str.lower())]  # Note: Wrapped in a list
-            if isinstance(word_tokenize(prediction_str.lower()), list):
-                pred_tokens = word_tokenize(prediction_str.lower())
-            else:
-                pred_tokens = [word_tokenize(prediction_str.lower())] 
-            
-            # Calculate BLEU with smoothing
-            smoothing = SmoothingFunction().method1
-            bleu = sentence_bleu(expected_tokens, pred_tokens, smoothing_function=smoothing)
-            
-            # Calculate METEOR
-            if isinstance(word_tokenize(prediction_str.lower()), list):
-                meteor = meteor_score([expected_str], prediction_str)
-            else:
-                meteor = meteor_score([expected_str], [prediction_str])
-            
-            # Calculate ROUGE
-            scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
-            rouge_scores = scorer.score(expected_str, prediction_str)
-            rouge_avg = (rouge_scores['rouge1'].fmeasure + rouge_scores['rougeL'].fmeasure) / 2.0
-            
-            return {"bleu": float(bleu), "meteor": float(meteor), "rouge": float(rouge_avg)}
-        except Exception as e:
-            print(f"Metric error: {e}")
-            return {"bleu": 0.0, "meteor": 0.0, "rouge": 0.0}
 
 
-    # def evaluate_open_ended_metrics(self, expected, prediction):
-    #     """Robust metric calculation with error handling"""
-    #     try:
-    #         # Tokenize for BLEU
-    #         expected_tokens = nltk.word_tokenize(expected.lower())
-    #         pred_tokens = nltk.word_tokenize(prediction.lower())
-            
-    #         # Calculate BLEU with smoothing
-    #         smoothing = SmoothingFunction().method1
-    #         bleu = sentence_bleu([expected_tokens], pred_tokens, smoothing_function=smoothing)
-            
-    #         # Calculate METEOR
-    #         meteor = meteor_score([expected], prediction)
-            
-    #         # Calculate ROUGE
-    #         scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
-    #         rouge_scores = scorer.score(expected, prediction)
-    #         rouge_avg = (rouge_scores['rouge1'].fmeasure + rouge_scores['rougeL'].fmeasure) / 2.0
-            
-    #         return {
-    #             "bleu": float(bleu),
-    #             "meteor": float(meteor),
-    #             "rouge": float(rouge_avg)
-    #         }
-    #     except Exception as e:
-    #         print(f"Metric calculation error: {e}")
-    #         return {"bleu": 0.0, "meteor": 0.0, "rouge": 0.0}
+
 
     def evaluate_true_false_questions(self):
         """Enhanced TF evaluation with better answer parsing"""
@@ -570,7 +510,6 @@ class BioMistralEvaluator:
             print(f"Error evaluating TF questions: {e}")
             return {"average": 0.0, "scores": {}}
 
-    # [Include other evaluation methods with similar enhancements]
 
 
     def evaluate_multiple_choice_questions(self):
@@ -728,8 +667,7 @@ class BioMistralEvaluator:
                 try:
                     prompt = self.generate_prompt(template, qa, "short_inverse")
                     response = self.generate_response(prompt)
-                    print("Short Inverse Response:", response, flush=True)
-                    # Use the provided incorrect explanation as the expected text.
+                    response.replace("Incorrect Explanation: ","")
                     expected = qa.get("incorrect_explanation", "")
                     f1_score = self.evaluate_open_ended(expected, response)
                     metrics = self.evaluate_open_ended_metrics(expected, response)
