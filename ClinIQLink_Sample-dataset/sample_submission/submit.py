@@ -416,7 +416,7 @@ class BioMistralEvaluator:
           context_str = "\n".join([f"• {c}" for c in context])
           
           # Create optimized prompt
-          system_prompt = """[INST] You are a precise medical AI assistant. 
+          system_prompt = f"""[INST] You are a precise medical AI assistant. 
           Answer the question concisely with just the factual answer.
           Do not include any explanations or additional text.
           
