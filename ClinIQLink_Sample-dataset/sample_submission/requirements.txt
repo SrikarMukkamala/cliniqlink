@@ -4,7 +4,7 @@ scikit-learn==1.2.2
 sentence-transformers==3.3.1
 nltk==3.9.1
 rouge-score==0.1.2
-transformers==4.47.0 # only required if using GPT-2 example
+transformers
 torch==2.5.1+cu121
 faiss-cpu==1.10.0
 datasets==3.3.1
