@@ -22,12 +22,12 @@ You can find the output of that run in enhanced_medical_evaluation_results.json 
 |------------------------|--------------------|------------------------|------------|
 | **True/False**         | 0.800              | 0.600                  | +0.200     |
 | **Multiple Choice**    | 0.800              | 1.000                  | -0.200     |
-| **List**              | 0.825              | 0.678                  | +0.147     |
-| **Short Answer**      | 0.415              | 0.538                  | -0.123     |
-| **Multi-hop**         | 0.565              | 0.587                  | -0.022     |
-| **Short Inverse**     | 0.633              | 0.708                  | -0.075     |
-| **Multi-hop Inverse** | 0.000              | 0.626                  | -0.626     |
-| **Overall Score**     | 0.577              | 0.677                  | -0.100     |
+| **List**              | 0.870              | 0.678                  | +0.192     |
+| **Short Answer**      | 0.550              | 0.538                  | +0.120     |
+| **Multi-hop**         | 0.500              | 0.587                  | -0.087     |
+| **Short Inverse**     | 0.640              | 0.708                  | -0.068     |
+| **Multi-hop Inverse** | 0.420              | 0.626                  | -0.206     |
+| **Overall Score**     | 0.655              | 0.677                  | -0.022     |
 
 # Future Works:
 1. Adjust BioMistral7B to work for Multi-hop Inverse Questions.
