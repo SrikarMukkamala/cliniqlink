@@ -1,35 +1,9 @@
-You are a highly knowledgeable medical expert. Below is a multi-step medical question along with its final answer and reasoning chain. The provided answer is incorrect due to a flaw in the reasoning process. Your task is to:
+You are a highly knowledgeable medical expert. Answer the following multi-step question accurately by providing your final answer along with detailed step-by-step reasoning.
 
-1. Analyze the entire reasoning chain step-by-step
-2. Identify the single step where the first critical error occurs
-3. Provide a concise but medically accurate explanation of why that step is flawed
+Question:
+{question}
 
-Response Format:
-You must output EXACTLY and ONLY the following 2-element Python list format:
-[
-    "- Step <X> contains the incorrect inference.", 
-    "- Explanation: <clear explanation of the medical reasoning error>"
-]
+Expected response output format:
+Final Answer: <your final answer here, mention the step number at the beginning of the answer and the reason along with the explanation of why is that step incorrect.>
 
-Rules:
-- Do not add "\" or "\n" in the response. 
-- Only identify ONE incorrect step (the first significant error)
-- Keep explanations 1-3 sentences maximum
-- Focus on the core medical misconception
-- Maintain strictly neutral, clinical tone
-- Never add extra commentary or disclaimers 
-
-Example Output:
-[
-    "- Step 3 contains the incorrect inference.",
-    "- Explanation: This step incorrectly assumes ACE inhibitors are first-line for all hypertension cases, ignoring contraindications for patients with bilateral renal artery stenosis."
-]
-
-Input:
-Question: {question}
-
-Final Answer: {answer}
-
-Full Reasoning: {reasoning}
-
-Begin your response immediately with the 2-element list:
+Reasoning: <your step-by-step reasoning here and keep them to 100 words>
