@@ -792,57 +792,57 @@ class ModelEvaluator:
     #         return {"average": 0.0, "scores": {}}
 
     
-    def evaluate_multi_hop_inverse_questions(self):
-        """
-        Evaluate all Multi-hop Inverse questions by comparing the LLM's response with the provided
-        incorrect reasoning step. Returns a dictionary containing the average F1 score and a mapping
-        (by paragraph_id) of individual QA scores.
-        """
-        try:
-            mh_inverse_path = os.path.join(self.qa_dir, "multi_hop_inverse.json")
-            mh_inverse_data = self.load_json(mh_inverse_path)
-            if mh_inverse_data is None:
-                print("No Multi-hop Inverse data loaded.", flush=True)
-                return {"average": 0.0, "scores": {}}
-            template = self.load_template("multi_hop_inverse_template.prompt")
-            results = {}
-            scores = []
-            for qa in mh_inverse_data:
-                try:
-                    prompt = self.generate_prompt(template, qa, "multi_hop_inverse")
-                    temp_response = self.generate_response(prompt)
-                    temp_response_list = eval(temp_response)
-                    response = []
-                    step_text = temp_response_list[0]  # First item, which contains the "Step" part
-                    explanation_text = temp_response_list[1]  # Second item, which contains the "Explanation" part                    
-                    step_prefix = step_text.split(' ')[0] + ' ' + step_text.split(' ')[1]  # Extract "- Step X"
-                    step_content = step_text.split(' ', 2)[2]  # Extract everything after "- Step X"
-                    explanation_prefix = explanation_text.split(':')[0] + ':'  # Extract "- Explanation:"
-                    explanation_content = explanation_text.split(':', 1)[1]  # Extract everything after "- Explanation:"
-                    response.append(step_prefix + ' ' + step_content)
-                    response.append(explanation_prefix + ' ' + explanation_content)
-                    print("Multi-hop Inverse Response:", response, flush=True)
-                    # Use the provided incorrect reasoning step as the expected text.
-                    expected = qa.get("incorrect_reasoning_step", "")
-                    f1_score = self.evaluate_open_ended(expected, response)
-                    metrics = self.evaluate_open_ended_metrics(expected, response)
-                    para_id = qa.get("source", {}).get("paragraph_id", "unknown")
-                    results[para_id] = {
-                        "question": qa.get("question", ""),
-                        "expected": expected,
-                        "predicted": response,
-                        "f1_score": f1_score,
-                        "metrics": metrics
-                    }
-                    scores.append(f1_score)
-                except Exception as inner_e:
-                    print(f"Error processing Multi-hop Inverse QA: {inner_e}", flush=True)
-            avg = sum(scores) / len(scores) if scores else 0.0
-            print(f"Average Multi-hop Inverse F1 Score: {avg:.2f}", flush=True)
-            return {"average": avg, "scores": results}
-        except Exception as e:
-            print(f"Error evaluating Multi-hop Inverse questions: {e}", flush=True)
-            return {"average": 0.0, "scores": {}}
+    # def evaluate_multi_hop_inverse_questions(self):
+    #     """
+    #     Evaluate all Multi-hop Inverse questions by comparing the LLM's response with the provided
+    #     incorrect reasoning step. Returns a dictionary containing the average F1 score and a mapping
+    #     (by paragraph_id) of individual QA scores.
+    #     """
+    #     try:
+    #         mh_inverse_path = os.path.join(self.qa_dir, "multi_hop_inverse.json")
+    #         mh_inverse_data = self.load_json(mh_inverse_path)
+    #         if mh_inverse_data is None:
+    #             print("No Multi-hop Inverse data loaded.", flush=True)
+    #             return {"average": 0.0, "scores": {}}
+    #         template = self.load_template("multi_hop_inverse_template.prompt")
+    #         results = {}
+    #         scores = []
+    #         for qa in mh_inverse_data:
+    #             try:
+    #                 prompt = self.generate_prompt(template, qa, "multi_hop_inverse")
+    #                 temp_response = self.generate_response(prompt)
+    #                 temp_response_list = eval(temp_response)
+    #                 response = []
+    #                 step_text = temp_response_list[0]  # First item, which contains the "Step" part
+    #                 explanation_text = temp_response_list[1]  # Second item, which contains the "Explanation" part                    
+    #                 step_prefix = step_text.split(' ')[0] + ' ' + step_text.split(' ')[1]  # Extract "- Step X"
+    #                 step_content = step_text.split(' ', 2)[2]  # Extract everything after "- Step X"
+    #                 explanation_prefix = explanation_text.split(':')[0] + ':'  # Extract "- Explanation:"
+    #                 explanation_content = explanation_text.split(':', 1)[1]  # Extract everything after "- Explanation:"
+    #                 response.append(step_prefix + ' ' + step_content)
+    #                 response.append(explanation_prefix + ' ' + explanation_content)
+    #                 print("Multi-hop Inverse Response:", response, flush=True)
+    #                 # Use the provided incorrect reasoning step as the expected text.
+    #                 expected = qa.get("incorrect_reasoning_step", "")
+    #                 f1_score = self.evaluate_open_ended(expected, response)
+    #                 metrics = self.evaluate_open_ended_metrics(expected, response)
+    #                 para_id = qa.get("source", {}).get("paragraph_id", "unknown")
+    #                 results[para_id] = {
+    #                     "question": qa.get("question", ""),
+    #                     "expected": expected,
+    #                     "predicted": response,
+    #                     "f1_score": f1_score,
+    #                     "metrics": metrics
+    #                 }
+    #                 scores.append(f1_score)
+    #             except Exception as inner_e:
+    #                 print(f"Error processing Multi-hop Inverse QA: {inner_e}", flush=True)
+    #         avg = sum(scores) / len(scores) if scores else 0.0
+    #         print(f"Average Multi-hop Inverse F1 Score: {avg:.2f}", flush=True)
+    #         return {"average": avg, "scores": results}
+    #     except Exception as e:
+    #         print(f"Error evaluating Multi-hop Inverse questions: {e}", flush=True)
+    #         return {"average": 0.0, "scores": {}}
     
     
     # def evaluate_multi_hop_inverse_questions(self):
@@ -886,6 +886,60 @@ class ModelEvaluator:
     #     except Exception as e:
     #         print(f"Error evaluating Multi-hop Inverse questions: {e}", flush=True)
     #         return {"average": 0.0, "scores": {}}
+
+    def evaluate_multi_hop_inverse_questions(self):
+      """Properly handle list-type expected answers for multi-hop inverse"""
+      try:
+          mh_inverse_path = os.path.join(self.qa_dir, "multi_hop_inverse.json")
+          mh_inverse_data = self.load_json(mh_inverse_path)
+          if not mh_inverse_data:
+              return {"average": 0.0, "scores": {}}
+              
+          template = self.load_template("multi_hop_inverse_template.prompt")
+          results = {}
+          scores = []
+          
+          for qa in mh_inverse_data:
+              try:
+                  prompt = self.generate_prompt(template, qa, "multi_hop_inverse")
+                  response = self.generate_response(prompt)
+                  response = response.replace(prompt,"").strip()
+                  
+                  # Handle list-type expected answers
+                  expected = qa.get("incorrect_reasoning_step", [])
+                  if isinstance(expected, list):
+                      expected_str = ' '.join(expected)
+                  else:
+                      expected_str = str(expected)
+                  
+                  # Handle prediction
+                  if isinstance(response, list):
+                      prediction_str = ' '.join(response)
+                  else:
+                      prediction_str = str(response)
+                  
+                  f1_score = self.evaluate_open_ended(expected_str, prediction_str)
+                  
+                  results[qa.get("source", {}).get("paragraph_id", "unknown")] = {
+                      "question": qa.get("question", ""),
+                      "expected": expected,
+                      "predicted": response,
+                      "f1_score": f1_score,
+                      "metrics": self.evaluate_open_ended_metrics(expected_str, prediction_str)
+                  }
+                  scores.append(f1_score)
+                  
+              except Exception as e:
+                  print(f"Error processing Multi-hop Inverse QA: {e}")
+                  scores.append(0.0)
+          
+          avg = sum(scores) / len(scores) if scores else 0.0
+          print(f"Average Multi-hop Inverse F1 Score: {avg:.2f}")
+          return {"average": avg, "scores": results}
+          
+      except Exception as e:
+          print(f"Error evaluating Multi-hop Inverse questions: {e}")
+          return {"average": 0.0, "scores": {}}
 
 
 
