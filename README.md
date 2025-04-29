@@ -32,10 +32,11 @@ You can find the output of that run in enhanced_medical_evaluation_results.json 
 # Updates Done For Phase III:
 1. Adjust BioMistral7B to work for Multi-hop Inverse Questions.
 2. Update RAG's Knowledge base with [PubMed data](https://huggingface.co/datasets/MedRAG/pubmed) and [Wikipedia data](https://huggingface.co/datasets/MedRAG/wikipedia).
-3. Use BM25 + Faiss for re-ranking during information retrieval.
-4. Add Hallucination Detection Framework.
-5. Include External Fact Checking.
-6. Experiment with other models.
+3. Enhanced the KB efficiency using Knowledge Distillation.
+4. Use BM25 + Faiss for re-ranking during information retrieval.
+5. Add Hallucination Detection Framework.
+6. Include External Fact Checking.
+7. Experiment with other models.
 
 # Note: 
 The model is around 14.5 GB in size, so kindly ensure that <br>
