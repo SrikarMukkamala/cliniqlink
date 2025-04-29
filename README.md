@@ -29,7 +29,7 @@ You can find the output of that run in enhanced_medical_evaluation_results.json 
 | **Multi-hop Inverse** | 0.420              | 0.626                  | -0.206     |
 | **Overall Score**     | 0.655              | 0.677                  | -0.022     |
 
-# Future Works:
+# Updates Done For Phase III:
 1. Adjust BioMistral7B to work for Multi-hop Inverse Questions.
 2. Update RAG's Knowledge base with [PubMed data](https://huggingface.co/datasets/MedRAG/pubmed) and [Wikipedia data](https://huggingface.co/datasets/MedRAG/wikipedia).
 3. Use BM25 + Faiss for re-ranking during information retrieval.
